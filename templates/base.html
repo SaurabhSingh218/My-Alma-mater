@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhishek Alma-mater</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="chatbox">
+            <div class="chatbox__support chatbox--active">
+                <div class="chatbox__header">
+                    <div class="chatbox__content--header">
+                        <h4 class="chatbox__heading--header">Chat Support</h4>
+                        <p class="chatbox__description--header">Hi. My name is Abhishek's Alma mater. How can I help you?</p>
+                    </div>
+                </div>
+
+                <div class="language-selection" style="margin: 10px 0; text-align: center;">
+                    <label for="language" style="font-size: 14px;">Select Language: </label>
+                    <select id="language" class="language-dropdown" style="padding: 5px; font-size: 14px;">
+                        <option value="en" selected>English</option>
+                        <option value="es">Spanish</option>
+                        <option value="fr">French</option>
+                        <option value="de">German</option>
+                        <option value="hi">Hindi</option>
+                    </select>
+                    <button id="set-language-btn" style="padding: 5px 10px; font-size: 14px;">Set Language</button>
+                </div>
+
+                <div class="chatbox__messages">
+                    <div></div>
+                </div>
+
+                <div class="chatbox__footer">
+                    <input type="text" placeholder="Write a message...">
+                    <button class="chatbox__send--footer send__button">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $SCRIPT_ROOT = {{ request.script_root|tojson }};
+    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
